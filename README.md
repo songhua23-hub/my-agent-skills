@@ -2,52 +2,90 @@
 
 A collection of Agent Skills for extending AI coding agent capabilities.
 
-## 🚀 Available Skills
+## 🚀 Getting Started
 
-### find-skills
-Helps you discover and install agent skills from the open ecosystem. Perfect for finding specialized tools and workflows.
+This repository is set up to host and manage Agent Skills for various AI coding agents.
 
-- **Name**: find-skills
-- **Description**: Discover and install agent skills
-- **Source**: [vercel-labs/skills](https://github.com/vercel-labs/skills) (MIT License)
-
-## 📥 Installation
-
-### Install All Skills
+### Installation
 
 ```bash
+# Install all skills from this repository
 npx skills add https://github.com/songhua23-hub/my-agent-skills
-```
 
-### Install Specific Skill
+# Or install to specific agent
+npx skills add https://github.com/songhua23-hub/my-agent-skills -a claude-code
 
-```bash
-npx skills add https://github.com/songhua23-hub/my-agent-skills --skill find-skills
-```
-
-### Install to Specific Agent
-
-```bash
-npx skills add https://github.com/songhua23-hub/my-agent-skills --skill find-skills -a claude-code
-```
-
-### Global Installation
-
-```bash
+# Global installation
 npx skills add https://github.com/songhua23-hub/my-agent-skills -g
 ```
 
-## 🔍 Using Skills
+## 📁 Directory Structure
 
-Once installed, your coding agent will automatically load these skills. For example, with find-skills:
+```
+my-agent-skills/
+├── LICENSE              # MIT License
+├── README.md            # This file
+├── .gitignore           # Git ignore rules
+└── skills/              # Skills directory
+    ├── example-skill/
+    │   └── SKILL.md
+    └── another-skill/
+        └── SKILL.md
+```
+
+## 🛠️ Creating Your Own Skills
+
+### 1. Create a skill directory
 
 ```bash
-npx skills find react
+mkdir -p skills/my-skill
 ```
+
+### 2. Create SKILL.md
+
+```bash
+cat > skills/my-skill/SKILL.md << 'EOF'
+---
+name: my-skill
+description: Brief description of what this skill does
+---
+
+# My Skill
+
+Detailed instructions for the agent to follow when this skill is activated.
+
+## When to Use
+
+Describe scenarios where this skill should be used.
+
+## Steps
+
+1. First step
+2. Second step
+3. Third step
+EOF
+```
+
+### 3. Test your skill
+
+```bash
+# List available skills
+npx skills add ./skills --list
+
+# Install locally
+npx skills add ./skills --skill my-skill
+```
+
+## 📚 Resources
+
+- [Agent Skills Specification](https://agentskills.io)
+- [Skills Directory](https://skills.sh)
+- [Skills CLI Documentation](https://github.com/vercel-labs/skills)
+- [Vercel Agent Skills](https://github.com/vercel-labs/agent-skills)
 
 ## 🤖 Supported Agents
 
-These skills are compatible with:
+Agent Skills are compatible with:
 - Claude Code
 - Cursor
 - GitHub Copilot
@@ -55,64 +93,23 @@ These skills are compatible with:
 - OpenCode
 - And 68+ other agents
 
-See [Agent Skills CLI](https://github.com/vercel-labs/skills) for full list.
-
-## 📚 Documentation
-
-- [Agent Skills Specification](https://agentskills.io)
-- [Skills Directory](https://skills.sh)
-- [Vercel Agent Skills](https://github.com/vercel-labs/agent-skills)
-
-## 🎯 Directory Structure
-
-```
-my-agent-skills/
-├── LICENSE
-├── README.md
-├── skills/
-│   └── find-skills/
-│       └── SKILL.md
-└── .gitignore
-```
-
-## 📖 Credits
-
-**Original Sources:**
-- **find-skills** - Adapted from [vercel-labs/skills](https://github.com/vercel-labs/skills)
-- **Vercel Labs** - For creating and maintaining the open Agent Skills ecosystem
-
-**Attribution:**
-This project includes skills and components from the [vercel-labs/skills](https://github.com/vercel-labs/skills) repository, which is licensed under the MIT License. We appreciate Vercel's contribution to the open-source community.
+See [Skills CLI](https://github.com/vercel-labs/skills#supported-agents) for the full list.
 
 ## 📄 License
 
-This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
-
-### What This Means
-
-✅ **You can:**
-- Use these skills for any purpose (commercial or non-commercial)
-- Modify and adapt the skills
-- Distribute copies
-- Include in your own projects
-
-⚠️ **You must:**
-- Include the original copyright notice
-- Include a copy of the license
-
----
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🤝 Contributing
 
 Contributions are welcome! Feel free to:
-- Submit new skills
+- Create new skills
 - Report issues
 - Suggest improvements
-- Fork and create your own versions
+- Submit pull requests
 
-## 📞 Support
+## 📖 Next Steps
 
-For issues with the skills, check:
-1. [skills.sh](https://skills.sh) - Official skills marketplace
-2. [vercel-labs/skills](https://github.com/vercel-labs/skills) - Original repository
-3. [Agent Skills Specification](https://agentskills.io) - Technical documentation
+1. Create your first skill in the `skills/` directory
+2. Push to GitHub
+3. Install using the Skills CLI
+4. Share with the community at [skills.sh](https://skills.sh)
