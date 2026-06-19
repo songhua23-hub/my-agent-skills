@@ -1,9 +1,13 @@
 ---
 name: find-skills
 description: Helps users discover and install agent skills when they ask questions like "how do I do X", "find a skill for X", "is there a skill that can...", or express interest in extending capabilities
+source: https://github.com/vercel-labs/skills
+license: MIT
 ---
 
 # Find Skills
+
+**Source:** [vercel-labs/skills](https://github.com/vercel-labs/skills) (MIT License)
 
 This skill helps you discover and install skills from the open agent skills ecosystem.
 
@@ -140,3 +144,7 @@ I can still help you with this task directly! Would you like me to proceed?
 If this is something you do often, you could create your own skill:
 npx skills init my-xyz-skill
 ```
+
+## License
+
+This skill is licensed under the MIT License. See the [LICENSE](../../LICENSE) file for details.
